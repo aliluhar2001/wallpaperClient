@@ -1,0 +1,130 @@
+/* From Uiverse.io by Nawsome */ 
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa; /* Light background for contrast */
+}
+
+.wallpaper-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
+  gap: 40px; /* Spacing between wallpapers */
+  padding: 30px;
+}
+
+.wallpaper-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wallpaper-item img {
+  width: 100%;
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Ensures image scales nicely */
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wallpaper-item:hover img {
+  transform: scale(1.05); /* Slight zoom effect on hover */
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.wallpaper-item .download-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: #03a9f4;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  font-size: 0.9em;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.wallpaper-item:hover .download-btn {
+  opacity: 1; /* Button appears on hover */
+}
+
+
+.header {
+  position: fixed; /* Stays at the top even when scrolling */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width of the page */
+  background-color: #000000; /* Blue background for the heading */
+  color: white; /* White text color */
+  text-align: left; /* Center-align text */
+  
+
+  padding: 10px 0; /* Padding for spacing */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+  z-index: 1000; /* Ensures it stays above other elements */
+}
+
+.htext{
+  margin-left: 10%;
+  font-size: large;
+  font-style: normal;
+  font-family: serif;
+}
+
+.content {
+  padding-top: 100px; /* Add spacing to prevent content overlap */
+}
+
+
+/* From Uiverse.io by Navarog21 */ 
+button {
+  width: 20em;
+  position: relative;
+  height: 3.5em;
+  border: 3px ridge #149CEA;
+  outline: none;
+  background-color: transparent;
+  color: white;
+  transition: 1s;
+  border-radius: 0.3em;
+  font-size: 16px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  cursor: pointer;
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #000000;
+  transition: 0.5s;
+  transform-origin: center;
+}
+
+button::before {
+  content: "";
+  transform-origin: center;
+  position: absolute;
+  top: 80%;
+  left: 3%;
+  width: 95%;
+  height: 40%;
+  background-color: #000000;
+  transition: 0.5s;
+}
+
+button:hover::before, button:hover::after {
+  transform: scale(0)
+}
+
+button:hover {
+  box-shadow: inset 0px 0px 25px #1479EA;
+}
