@@ -41,7 +41,7 @@ const Home = () => {
               className="wallpaper-item img"
             >
               <img
-                src={`http://localhost:5000${wallpaper.imagePath}`}
+                src={`https://ali-ke-wallpapers.onrender.com${wallpaper.imagePath}`}
                 alt={`Wallpaper ${index + 1}`}
                 className=""
               />
@@ -50,7 +50,7 @@ const Home = () => {
                   Wallpaper {index+1}
                 </span>
                 <a
-                  href={`http://localhost:5000${wallpaper.imagePath}`}
+                  href={`https://ali-ke-wallpapers.onrender.com${wallpaper.imagePath}`}
                   download={`Wallpaper_${index + 1}`}
                   className="download-btn"
                 >
