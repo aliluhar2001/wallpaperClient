@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+//import {saveAs} from 'file-saver';
 
 const Home = () => {
   const [wallpapers, setWallpapers] = useState([]);
   const [loading, setLoading] = useState(true);
+  
 
   useEffect(() => {
     const fetchWallpapers = async () => {
@@ -50,8 +51,10 @@ const Home = () => {
                   Wallpaper {index+1}
                 </span>
                 <a
+                
                   href={`https://ali-ke-wallpapers.onrender.com${wallpaper.imagePath}`}
-                  download={`Wallpaper_${index + 1}`}
+                  download
+                  //onClick={downloadImg}
                   className="download-btn"
                 >
                   Download

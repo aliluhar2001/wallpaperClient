@@ -1,4 +1,4 @@
-/* From Uiverse.io by Nawsome */ 
+/* General Reset */
 body {
   margin: 0;
   padding: 0;
@@ -6,26 +6,22 @@ body {
   background-color: #f8f9fa; /* Light background for contrast */
 }
 
-.wallpaper-container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns per row */
-  gap: 40px; /* Spacing between wallpapers */
-  padding: 30px;
-}
-
+/* Wallpaper Container */
 .wallpaper-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* Ensures the button is positioned relative to the container */
 }
 
 .wallpaper-item img {
-  width: 100%;
-  height: 200px; /* Set a fixed height */
-  object-fit: cover; /* Ensures image scales nicely */
+  width: 100%; /* Scale image to fit the container width */
   border-radius: 8px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wallpaper-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive grid */
+  gap: 20px; /* Spacing between wallpapers */
+  padding: 20px;
 }
 
 .wallpaper-item:hover img {
@@ -33,10 +29,11 @@ body {
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
 }
 
+/* Download Button */
 .wallpaper-item .download-btn {
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 25px;
+  right: 0px;
   background-color: #03a9f4;
   color: white;
   border: none;
@@ -44,15 +41,17 @@ body {
   border-radius: 5px;
   font-size: 0.9em;
   cursor: pointer;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  opacity: 0; /* Initially hidden */
+  visibility: hidden; /* Prevents tab focus */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .wallpaper-item:hover .download-btn {
-  opacity: 1; /* Button appears on hover */
+  opacity: 1; /* Button becomes visible */
+  visibility: visible; /* Allows interaction */
 }
 
-
+/* Header Styling */
 .header {
   position: fixed; /* Stays at the top even when scrolling */
   top: 0;
@@ -61,14 +60,12 @@ body {
   background-color: #000000; /* Blue background for the heading */
   color: white; /* White text color */
   text-align: left; /* Center-align text */
-  
-
   padding: 10px 0; /* Padding for spacing */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
   z-index: 1000; /* Ensures it stays above other elements */
 }
 
-.htext{
+.htext {
   margin-left: 10%;
   font-size: large;
   font-style: normal;
@@ -79,8 +76,7 @@ body {
   padding-top: 100px; /* Add spacing to prevent content overlap */
 }
 
-
-/* From Uiverse.io by Navarog21 */ 
+/* Button Styling */
 button {
   width: 20em;
   position: relative;
@@ -121,10 +117,27 @@ button::before {
   transition: 0.5s;
 }
 
-button:hover::before, button:hover::after {
-  transform: scale(0)
+button:hover::before,
+button:hover::after {
+  transform: scale(0);
 }
 
 button:hover {
   box-shadow: inset 0px 0px 25px #1479EA;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+  .wallpaper-item img {
+    height: 200px; /* Fixed height for uniform aspect ratio */
+    object-fit: cover; /* Crop the image to fit the height */
+  }
+}
+
+/* Mobile view: Original aspect ratio */
+@media (max-width: 767px) {
+  .wallpaper-item img {
+    height: 200px; /* Let the height adjust automatically */
+    object-fit: contain; /* Maintain the original aspect ratio */
+  }
 }
