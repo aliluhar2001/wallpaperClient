@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchWallpapers = async () => {
       try {
-        const response = await axios.get('https://ali-ke-wallpapers.onrender.com');
+        const response = await axios.get('https://ali-ke-wallpapers.onrender.com/wallpapers');
         setWallpapers(response.data);
         setLoading(false);
       } catch (error) {
